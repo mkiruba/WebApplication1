@@ -30,9 +30,11 @@ namespace WebApplication1.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             var uri = $"{baseurl}{apiurl}?postcode={postCode}&area={area}&api_key={apiKey}";
-            // New code:
-            //response = client.DownloadString(uri);
-            HttpResponseMessage response = client.GetAsync(uri).Result;
+                // New code:
+                //http://api.zoopla.co.uk/api/v1/property_listings.json?postcode=IG101TH&area=Loughton&listing_status=sale&api_key=psuy4qtt4u6nfy5r6mtrxdb9
+                //http://api.zoopla.co.uk/api/v1/property_listings.json?postcode=IG101TH&area=Loughton&listing_status=rent&api_key=psuy4qtt4u6nfy5r6mtrxdb9
+                //response = client.DownloadString(uri);
+                HttpResponseMessage response = client.GetAsync(uri).Result;
             if (response.IsSuccessStatusCode)
             {
               var propertyListing = response.Content.ReadAsAsync<PropertyListings>().Result;
