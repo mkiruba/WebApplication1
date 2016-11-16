@@ -47,9 +47,10 @@ namespace WebApplication1.Models
         public string Furnished { get; set; }
         [JsonProperty("property_type")]
         public string PropertyType { get; set; }
+        [JsonProperty("new_homes")]
+        public bool NewHomes { get; set; }
         [JsonProperty("chain_free")]
         public bool ChainFree { get; set; }
-        
         public string Keywords { get; set; }
         [JsonProperty("listing_id")]
         public long ListingId { get; set; }

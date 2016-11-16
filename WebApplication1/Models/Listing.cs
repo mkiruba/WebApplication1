@@ -8,6 +8,8 @@ namespace WebApplication1.Models
 {
   public class Listing
   {
+        [JsonProperty("rental_prices")]
+        public List<RentalPrice> RentalPrices { get; set; }
         [JsonProperty("num_floors")]
         public int NumFloors { get; set; }
         [JsonProperty("listing_status")]
